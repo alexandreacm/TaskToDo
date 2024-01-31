@@ -1,8 +1,14 @@
-import React from "react";
-import { View, Text, TextInput } from "react-native";
-import { styles } from "./styles";
+import React from 'react';
+import { View, Text, TextInput } from 'react-native';
+import { styles } from './styles';
 
-const InputTask = ({ value, onChangeText, error }) => {
+type Props = {
+  value: string;
+  onChangeText: React.Dispatch<React.SetStateAction<string>>;
+  error: boolean;
+};
+
+const InputTask = ({ value, onChangeText, error }: Props) => {
   return (
     <>
       <View style={styles.viewLabel}>
@@ -25,7 +31,6 @@ const InputTask = ({ value, onChangeText, error }) => {
           onChangeText={onChangeText}
         />
       </View>
-
     </>
   );
 };

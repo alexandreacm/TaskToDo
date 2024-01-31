@@ -25,9 +25,9 @@ export const styles = StyleSheet.create({
     marginRight: 5
   },
   labelError: {
-    fontSize: 14,
     width: 7,
     height: 14,
+    fontSize: 18,
     color: theme.colors.text.LABEL_ERROR,
   },
   viewLabel: {

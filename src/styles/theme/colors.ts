@@ -7,9 +7,10 @@ export const colors = {
         ERROR: '#D0421B',
         SUCCESS: '#138000',
         BUTTON: "#0C8CE9",
+        BORDER_BOTTOM: '#BDC5D0',
     },
     bg: {
-        PRIMARY: "#0C8CE9", 
+        PRIMARY: "#0C8CE9",
         HEADER_BG: "#D9EFFF"
     },
     text: {

@@ -1,8 +1,12 @@
-import React from "react";
-import { View, Text } from "react-native";
-import { styles } from "./styles";
+import React from 'react';
+import { View, Text } from 'react-native';
+import { styles } from './styles';
 
-export const Error = ({ error }) => {
+type Props = {
+  error: boolean;
+};
+
+export const Error = ({ error }: Props) => {
   return (
     <View style={styles.containerLabel}>
       <Text testID="labelTask" style={styles.labelInput}>

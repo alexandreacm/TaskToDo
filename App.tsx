@@ -1,5 +1,5 @@
-import React from "react";
-import Home from "./src/screens/Home";
+import React from 'react';
+import Home from './src/screens/Home';
 
 import {
   useFonts as useFontsRoboto,
@@ -9,7 +9,7 @@ import {
   Roboto_500Medium,
   Roboto_700Bold,
   Roboto_900Black,
-} from "@expo-google-fonts/roboto";
+} from '@expo-google-fonts/roboto';
 import {
   useFonts as useFontsInter,
   Inter_100Thin,
@@ -20,7 +20,7 @@ import {
   Inter_700Bold,
   Inter_800ExtraBold,
   Inter_900Black,
-} from "@expo-google-fonts/inter";
+} from '@expo-google-fonts/inter';
 
 function App() {
   const [fontsRobotoLoaded] = useFontsRoboto({
@@ -44,7 +44,7 @@ function App() {
   });
 
   if (!fontsRobotoLoaded || !fontsInterLoaded) {
-    return null
+    return null;
   }
 
   return <Home />;
