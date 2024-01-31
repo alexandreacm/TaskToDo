@@ -1,0 +1,244 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HOME Should create a snapshot test correctly 1`] = `
+<RCTSafeAreaView
+  style={
+    {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#D9EFFF",
+        "height": 56,
+        "justifyContent": "space-between",
+        "marginTop": 10,
+        "padding": 16,
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "color": "#0C8CE9",
+          "fontFamily": "Inter_700Bold",
+          "fontSize": 20,
+          "fontWeight": "700",
+          "height": 24,
+          "lineHeight": 24,
+          "textAlign": "center",
+          "width": "100%",
+        }
+      }
+      testID="textHeader"
+    >
+      Your Task
+    </Text>
+  </View>
+  <View
+    style={
+      {
+        "flex": 1,
+        "padding": 16,
+      }
+    }
+  >
+    <RCTScrollView
+      data={[]}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      keyExtractor={[Function]}
+      onContentSizeChange={[Function]}
+      onLayout={[Function]}
+      onMomentumScrollBegin={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEventThrottle={0.0001}
+      showVerticalScrollIndicator={false}
+      stickyHeaderIndices={[]}
+      testID="listTask"
+      viewabilityConfigCallbackPairs={[]}
+    >
+      <View />
+    </RCTScrollView>
+  </View>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#D9EFFF",
+        "height": 56,
+        "justifyContent": "space-between",
+        "marginTop": 10,
+        "padding": 16,
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "color": "#0C8CE9",
+          "fontFamily": "Inter_700Bold",
+          "fontSize": 20,
+          "fontWeight": "700",
+          "height": 24,
+          "lineHeight": 24,
+          "textAlign": "center",
+          "width": "100%",
+        }
+      }
+      testID="textHeader"
+    >
+      Add New Task
+    </Text>
+  </View>
+  <View
+    style={
+      {
+        "padding": 16,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "flexDirection": "row",
+          "marginBottom": 7,
+          "marginTop": 7,
+        }
+      }
+    >
+      <Text
+        style={
+          {
+            "color": "#1E1E1E",
+            "fontFamily": "Roboto_400Regular",
+            "fontSize": 14,
+            "fontWeight": "500",
+            "lineHeight": 14.4,
+            "marginRight": 5,
+            "textAlign": "left",
+          }
+        }
+        testID="labelTask"
+      >
+        Name
+      </Text>
+    </View>
+    <View
+      style={
+        {
+          "borderColor": "#666666",
+          "borderRadius": 8,
+          "borderWidth": 1,
+          "height": 43,
+          "width": "100%",
+        }
+      }
+    >
+      <TextInput
+        onChangeText={[Function]}
+        placeholder="New Name"
+        placeholderTextColor="#666666"
+        style={
+          {
+            "padding": 10,
+          }
+        }
+        testID="inputTask"
+        value="Task"
+      />
+    </View>
+    <View
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": undefined,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        [
+          {
+            "alignItems": "center",
+            "alignSelf": "center",
+            "backgroundColor": "#9747FF",
+            "borderRadius": 50,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "paddingHorizontal": 20,
+            "paddingVertical": 8,
+          },
+          {
+            "height": 40,
+          },
+          {
+            "alignItems": "center",
+            "backgroundColor": "#0C8CE9",
+            "borderRadius": 30,
+            "height": 61,
+            "justifyContent": "center",
+            "marginBottom": 25,
+            "marginTop": 55,
+            "padding": 16,
+            "width": "100%",
+          },
+          {
+            "opacity": 1,
+          },
+        ]
+      }
+      testID="button"
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "#FFFFFF",
+              "fontFamily": "Roboto_400Regular",
+              "fontSize": 16,
+              "fontWeight": "700",
+              "textAlign": "center",
+            },
+            {},
+          ]
+        }
+      >
+        Add
+      </Text>
+    </View>
+  </View>
+</RCTSafeAreaView>
+`;

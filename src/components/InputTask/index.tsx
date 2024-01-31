@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, TextInput } from 'react-native';
-import { styles } from './styles';
+import {View, Text, TextInput} from 'react-native';
+import {styles} from './styles';
 
 type Props = {
   value: string;
@@ -8,7 +8,7 @@ type Props = {
   error: boolean;
 };
 
-const InputTask = ({ value, onChangeText, error }: Props) => {
+const InputTask = ({value, onChangeText, error}: Props) => {
   return (
     <>
       <View style={styles.viewLabel}>

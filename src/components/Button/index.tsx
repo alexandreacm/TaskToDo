@@ -1,10 +1,10 @@
 // React
-import React, { useCallback } from "react";
-import { Text, Pressable } from "react-native";
+import React, {useCallback} from 'react';
+import {Text, Pressable} from 'react-native';
 
-import { presets } from "./styles";
+import {presets} from './styles';
 
-const Button = ({ text, onPress, color, disabled, style, textStyle }) => {
+const Button = ({text, onPress, color, disabled, style, textStyle}) => {
   // const { styles } = generateButtonStyles(theme);
   const preset = presets(color, disabled);
 
@@ -17,7 +17,7 @@ const Button = ({ text, onPress, color, disabled, style, textStyle }) => {
   const styleDisableTextButton = useCallback(() => {
     if (disabled) {
       return {
-        color: "#7C8898",
+        color: '#7C8898',
       };
     } else {
       return {};
@@ -26,17 +26,16 @@ const Button = ({ text, onPress, color, disabled, style, textStyle }) => {
 
   return (
     <Pressable
-      testID={"button"}
+      testID={'button'}
       disabled={disabled}
       accessible={true}
-      style={({ pressed }) => [
+      style={({pressed}) => [
         preset.button,
-        { height: 40 },
+        {height: 40},
         style,
         styleButton(pressed),
       ]}
-      onPress={onPress ? onPress : () => {}}
-    >
+      onPress={onPress ? onPress : () => {}}>
       <Text style={[textStyle, styleDisableTextButton()]}>{text}</Text>
     </Pressable>
   );

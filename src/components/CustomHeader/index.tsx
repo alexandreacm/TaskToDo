@@ -1,12 +1,14 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { theme } from '../../styles/theme';
+import {View, Text, StyleSheet} from 'react-native';
+import {theme} from '../../styles/theme';
 
 type Props = {
-  title: string;
+  title?: string;
 };
 
-export const CustomHeader = ({ title }: Props) => {
+export const CustomHeader = ({title}: Props) => {
+  if (title == '') return null;
+
   return (
     <View style={styles.containerHeader}>
       <Text testID="textHeader" style={styles.textHeader}>

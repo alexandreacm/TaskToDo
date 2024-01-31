@@ -1,14 +1,14 @@
-import React, { useCallback } from 'react';
-import { SafeAreaView, StyleSheet, View } from 'react-native';
+import React, {useCallback} from 'react';
+import {SafeAreaView, StyleSheet, View} from 'react-native';
 
-import { CustomHeader } from '../../components/CustomHeader';
+import {CustomHeader} from '../../components/CustomHeader';
 import InputTask from '../../components/InputTask';
 import TodoList from '../../components/TodoList';
-import { clearStorage, containsKey, loadData, saveData } from '../../storage/';
-import { TASK_KEY } from '../../constants';
+import {clearStorage, containsKey, loadData, saveData} from '../../storage/';
+import {TASK_KEY} from '../../constants';
 
 import Button from '../../components/Button';
-import { theme } from '../../styles/theme';
+import {theme} from '../../styles/theme';
 
 // const initialState = {
 //   data: [],
@@ -73,9 +73,7 @@ function Home() {
       return;
     }
 
-    const editingTask: any = data.find(
-      (item) => item.id == taskEditable.idTask
-    );
+    const editingTask: any = data.find(item => item.id == taskEditable.idTask);
     editingTask.task = newTask;
 
     setData([...data]);
@@ -85,18 +83,18 @@ function Home() {
   };
 
   const onDeleteTask = (id: number) => {
-    const taskItems = data.filter((task) => task.id !== id);
+    const taskItems = data.filter(task => task.id !== id);
 
     setData([...taskItems]);
   };
 
   const onEditTask = useCallback((item: Task) => {
     setNewTask(item.task);
-    setTaskEditable({ edit: true, idTask: item.id });
+    setTaskEditable({edit: true, idTask: item.id});
   }, []);
 
   const onFinishTask = (id: number) => {
-    const taskItem: any = data.find((task) => task.id == id);
+    const taskItem: any = data.find(task => task.id == id);
 
     taskItem.isCompleted = !taskItem.isCompleted;
     setData([...data]);

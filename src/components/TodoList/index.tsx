@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList, Pressable } from 'react-native';
+import {View, Text, StyleSheet, FlatList, Pressable} from 'react-native';
 import CheckBoxCompleteTask from '../CheckBoxCompleteTask';
-import { styles } from './styles';
+import {styles} from './styles';
 
 type Props = {
   data: Task[];
@@ -10,13 +10,12 @@ type Props = {
   onFinishTask: (id: number) => void;
 };
 
-const TodoList = ({ data, onDeleteTask, onEditTask, onFinishTask }: Props) => {
-  const renderItem = ({ item }: { item: Task }) => {
+const TodoList = ({data, onDeleteTask, onEditTask, onFinishTask}: Props) => {
+  const renderItem = ({item}: {item: Task}) => {
     return (
       <Pressable
         onPress={() => onEditTask(item)}
-        style={styles.ContainerRender}
-      >
+        style={styles.ContainerRender}>
         <Pressable onPress={() => onFinishTask(item.id)}>
           <CheckBoxCompleteTask isChecked={item.isCompleted} />
         </Pressable>
@@ -37,7 +36,7 @@ const TodoList = ({ data, onDeleteTask, onEditTask, onFinishTask }: Props) => {
         showVerticalScrollIndicator={false}
         testID="listTask"
         data={data}
-        keyExtractor={(item) => String(item.id)}
+        keyExtractor={item => String(item.id)}
         renderItem={renderItem}
       />
     </View>

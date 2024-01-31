@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const saveData = async(key: string, data: any) => {
+const saveData = async (key: string, data: any) => {
   try {
     await AsyncStorage.setItem(key, JSON.stringify(data));
   } catch (e: any) {
@@ -8,22 +8,22 @@ const saveData = async(key: string, data: any) => {
   }
 };
 
-const loadData = async(key: string) => {
- try {
-   const value = await AsyncStorage.getItem(key);
-   return value !== null ? JSON.parse(value) : null;
- } catch (e: any) {
-   console.log(e.message);
- }
+const loadData = async (key: string) => {
+  try {
+    const value = await AsyncStorage.getItem(key);
+    return value !== null ? JSON.parse(value) : null;
+  } catch (e: any) {
+    console.log(e.message);
+  }
 };
 
 const containsKey = async (key: string): Promise<boolean> => {
   let containKey: boolean = false;
   try {
     let allKeys = await AsyncStorage.getAllKeys();
-     containKey  = allKeys.includes(key);
+    containKey = allKeys.includes(key);
 
-  } catch (e:any) {
+  } catch (e: any) {
     console.error(e.message);
   }
 
