@@ -32,13 +32,13 @@ cd ios && pod install
 **Run IOS**
 
 ```
-yarn expo start | yarn ios
+yarn start | yarn ios
 ```
 
 **Run Android**
 
 ```
-yarn expo start | yarn android
+yarn start | yarn android
 ```
 
 ## Running the tests
