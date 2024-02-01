@@ -3,7 +3,12 @@ import {View, StyleSheet} from 'react-native';
 import {theme} from '../../styles/theme';
 
 const CheckBoxCompleteTask = ({isChecked = false}) => {
-  return <View style={isChecked ? styles.checked : styles.unchecked} />;
+  return (
+    <View
+      testID="viewBody"
+      style={isChecked ? styles.checked : styles.unchecked}
+    />
+  );
 };
 
 const styles = StyleSheet.create({
