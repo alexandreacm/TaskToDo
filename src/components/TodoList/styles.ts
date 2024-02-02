@@ -38,4 +38,17 @@ export const styles = StyleSheet.create({
         lineHeight: 17,
         textAlign: 'left',
     },
+    deleteContainer: {
+        width: 75,
+        padding: 20,
+        backgroundColor: '#FF0000',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    deleteText: {
+        width: 70,
+        height: 15,
+        color: '#000',
+        textAlign: 'center'
+    }
 });

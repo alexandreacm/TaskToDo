@@ -1,5 +1,11 @@
 import React, {useCallback} from 'react';
-import {SafeAreaView, StyleSheet, View} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  View,
+  StatusBar,
+  Platform,
+} from 'react-native';
 
 import {CustomHeader} from '../../components/CustomHeader';
 import InputTask from '../../components/InputTask';
@@ -16,6 +22,10 @@ import {theme} from '../../styles/theme';
 //   taskEditable: null,
 //   error: false,
 // };
+
+//solution for android system.
+const isAndroid = Platform.OS === 'android' ? StatusBar.currentHeight : 0;
+
 function Home() {
   const [data, setData] = React.useState<Task[]>([]);
   const [newTask, setNewTask] = React.useState('Task');
@@ -133,6 +143,7 @@ const styles = StyleSheet.create({
   app: {
     flex: 1,
     backgroundColor: theme.colors.ui.WHITE,
+    paddingTop: isAndroid,
   },
   bottomContainer: {
     padding: 16,
