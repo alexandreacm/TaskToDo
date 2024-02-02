@@ -28,7 +28,7 @@ const isAndroid = Platform.OS === 'android' ? StatusBar.currentHeight : 0;
 
 function Home() {
   const [data, setData] = React.useState<Task[]>([]);
-  const [newTask, setNewTask] = React.useState('Task');
+  const [newTask, setNewTask] = React.useState('');
   const [taskEditable, setTaskEditable] = React.useState(null);
   const [error, setError] = React.useState<boolean>(false);
 
@@ -68,7 +68,7 @@ function Home() {
     const id = Math.floor(Math.random() * 100);
     const task: Task = {
       id,
-      task: `${newTask} ${id}`,
+      task: `${newTask}`,
       isCompleted: false,
     };
 

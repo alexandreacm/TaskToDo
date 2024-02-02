@@ -16,7 +16,7 @@ const InputTask = ({value, onChangeText, error}: Props) => {
           Name
         </Text>
         {error && (
-          <Text testID="labelTask" style={styles.labelError}>
+          <Text testID="labelTaskError" style={styles.labelError}>
             *
           </Text>
         )}
