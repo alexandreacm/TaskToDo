@@ -1,7 +1,8 @@
 import React from 'react';
-import {View, Text, StyleSheet, FlatList, Pressable} from 'react-native';
+import {View, Text, FlatList, Pressable} from 'react-native';
 import CheckBoxCompleteTask from '../CheckBoxCompleteTask';
 import {styles} from './styles';
+import {theme} from '../../styles/theme';
 
 type Props = {
   data: Task[];
@@ -30,6 +31,15 @@ const TodoList = ({data, onDeleteTask, onEditTask, onFinishTask}: Props) => {
     );
   };
 
+  const itemSeparator = () => (
+    <View
+      style={{
+        borderBottomWidth: 1,
+        borderBottomColor: theme.colors.ui.BORDER_BOTTOM,
+      }}
+    />
+  );
+
   return (
     <View style={styles.container}>
       <FlatList
@@ -38,6 +48,7 @@ const TodoList = ({data, onDeleteTask, onEditTask, onFinishTask}: Props) => {
         data={data}
         keyExtractor={item => String(item.id)}
         renderItem={renderItem}
+        ItemSeparatorComponent={itemSeparator}
       />
     </View>
   );

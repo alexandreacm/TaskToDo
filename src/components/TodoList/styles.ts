@@ -17,8 +17,6 @@ export const styles = StyleSheet.create({
         width: '100%',
         flexDirection: 'row',
         alignItems: 'center',
-        borderBottomWidth: 1,
-        borderBottomColor: theme.colors.ui.BORDER_BOTTOM,
     },
     ContainerItem: {
         flex: 1,
