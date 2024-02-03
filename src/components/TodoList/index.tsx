@@ -1,8 +1,13 @@
 import React from 'react';
-import {View, Text, FlatList, Pressable} from 'react-native';
+import {View, Text, FlatList, Pressable, Animated} from 'react-native';
 import CheckBoxCompleteTask from '../CheckBoxCompleteTask';
 import {styles} from './styles';
 import {theme} from '../../styles/theme';
+import {
+  GestureHandlerRootView,
+  RectButton,
+  Swipeable,
+} from 'react-native-gesture-handler';
 
 type Props = {
   data: Task[];
@@ -11,23 +16,51 @@ type Props = {
   onFinishTask: (id: number) => void;
 };
 
+type ActionProps = {
+  progress: Animated.AnimatedInterpolation<string | number>;
+  dragX: Animated.AnimatedInterpolation<string | number>;
+  idTask: number;
+};
+
 const TodoList = ({data, onDeleteTask, onEditTask, onFinishTask}: Props) => {
+  const RightActions = ({progress, dragX, idTask}: ActionProps) => {
+    const opacity = dragX.interpolate({
+      inputRange: [-150, 0],
+      outputRange: [1, 0.9],
+      extrapolate: 'clamp',
+    });
+    return (
+      <Animated.View style={[styles.swipedConfirmationContainer, {opacity}]}>
+        <RectButton onPress={() => onDeleteTask(idTask)}>
+          <Text style={styles.deleteButtonText}>Delete</Text>
+        </RectButton>
+      </Animated.View>
+    );
+  };
+
   const renderItem = ({item}: {item: Task}) => {
     return (
-      <Pressable
-        onPress={() => onEditTask(item)}
-        style={styles.ContainerRender}>
-        <Pressable onPress={() => onFinishTask(item.id)}>
-          <CheckBoxCompleteTask isChecked={item.isCompleted} />
-        </Pressable>
+      <GestureHandlerRootView>
+        <Swipeable
+          renderRightActions={(progress, dragX) => (
+            <RightActions progress={progress} dragX={dragX} idTask={item.id} />
+          )}>
+          <Pressable
+            onPress={() => onEditTask(item)}
+            style={styles.ContainerRender}>
+            <Pressable onPress={() => onFinishTask(item.id)}>
+              <CheckBoxCompleteTask isChecked={item.isCompleted} />
+            </Pressable>
 
-        <View style={styles.ContainerItem}>
-          <Text style={styles.item}>{item.task}</Text>
-          <Pressable onPress={() => onDeleteTask(item.id)}>
-            <Text style={styles.RemoveItem}>Remove Item</Text>
+            <View style={styles.ContainerItem}>
+              <Text style={styles.item}>{item.task}</Text>
+              {/* <Pressable onPress={() => onDeleteTask(item.id)}>
+              <Text style={styles.RemoveItem}>Remove Item</Text>
+            </Pressable> */}
+            </View>
           </Pressable>
-        </View>
-      </Pressable>
+        </Swipeable>
+      </GestureHandlerRootView>
     );
   };
 

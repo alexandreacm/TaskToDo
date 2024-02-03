@@ -36,17 +36,17 @@ export const styles = StyleSheet.create({
         lineHeight: 17,
         textAlign: 'left',
     },
-    deleteContainer: {
-        width: 75,
-        padding: 20,
+    swipedConfirmationContainer: {
+        width: 100,
+        padding: 10,
         backgroundColor: '#FF0000',
         alignItems: 'center',
         justifyContent: 'center'
     },
-    deleteText: {
-        width: 70,
-        height: 15,
+    deleteButtonText: {
+        width: '100%',
+        height: 20,
         color: '#000',
         textAlign: 'center'
-    }
+    },
 });
